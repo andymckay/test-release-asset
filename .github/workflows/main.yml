@@ -24,6 +24,10 @@ jobs:
           git commit -am "Updating version file"
           git push
 
+      - name: Zip the contents
+        run: |
+          zip -r diagnostic-script-`cat version`.zip *.py
+  
       - name: Tag the commit
         run: |
           tag=$(date +"%Y.%m.%d.%H.%M.%S")
