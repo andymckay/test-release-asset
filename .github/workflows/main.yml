@@ -37,7 +37,7 @@ jobs:
 
       - name: Release the new script
         uses: actions/create-release@v1.1.4
-
+        id: create_release
         # prevent releases from workflows run manually from branches other than main
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
